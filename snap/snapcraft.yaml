@@ -38,14 +38,6 @@ description: |
       Time-based (Blind)
       File-based (Semiblind)
 
-  **2.1 Time-based technique (Blind).**
-
-  Through this technique, an attacker injects and executes commands that introduce time delay. By measuring the time it took the application to respond, the attacker is able to identify if the command executed    successfully or failed. Note that the function in Bash shell that can introduce time delays is sleep. Thus, by observing time delays the attacker is capable of deducing the result of the injected command.
-
-  **2.2 File-based technique (Semiblind).**
-
-  The rationale behind this technique is based on a very simple logic: when the attacker is not able to observe the results of the execution of an injected command, then he/she can write them to a file, which     is accessible to the attacker. This command injection technique follows exactly the same methodology as the Classic results-based technique with the main difference that, after the execution of the injected     command, an output redirection is performed using the > operator, in order to save the output of the command to a text file. Due to the logic of this technique, the file-based can be also classified as          semiblind command injection technique, as the random text file containing the results of the desired shell command execution is visible to everyone.
-
   For more info read the manual: https://github.com/commixproject/commix/wiki
 
 icon: commix.png
