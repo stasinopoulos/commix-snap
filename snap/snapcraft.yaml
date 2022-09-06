@@ -3,7 +3,7 @@ base: core20
 adopt-info: commix
 summary: Command Injection Exploiter
 description: |
-  Commix (short for [comm]and [i]njection e[x]ploiter) is an open source penetration testing tool, written by Anastasios Stasinopoulos (@ancst), that automates the detection and exploitation of command            injection vulnerabilities.
+  Commix (short for [comm]and [i]njection e[x]ploiter) is an open source penetration testing tool, written by **Anastasios Stasinopoulos (@ancst)**, that automates the detection and exploitation of command            injection vulnerabilities.
 
   Commix, is able to detect and exploit the following command injection types:
 
@@ -69,7 +69,7 @@ parts:
     override-pull: |
       snapcraftctl pull
       #snapcraftctl set-version $(head -n 1 doc/CHANGELOG.md | awk -F " " '{ print $3$4 }' | awk -F '(' '{ print $1"-"$2 }' | awk -F ')' '{ print $1 }')
-      snapcraftctl set-version $(git describe --tags --long | awk -F " " '{ print $1"-latest" }')
+      snapcraftctl set-version $(git describe --tags --long ) #| awk -F " " '{ print $1"-latest" }')
 
     override-build: |
       snapcraftctl build
